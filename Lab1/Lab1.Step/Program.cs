@@ -115,12 +115,12 @@ namespace Lab1.Step
             return dogs.FindAll(d => d.Breed.Equals(breed)).ToList();
         }
 
-        private static int CountAggressive(List<Dog> dogs, int age)
+        private static int CountAggressive(IEnumerable<Dog> dogs, int age)
         {
             return dogs.Count(d => (d.Aggressive.Equals(true)) && (d.Age == age));
         }
 
-        private static List<Dog> FindOldestDogs(List<Dog> dogs, string breed)
+        private static List<Dog> FindOldestDogs(IEnumerable<Dog> dogs, string breed)
         {
             var filteredDogs = dogs.Where(d => d.Breed == breed).ToList();
             var maxAge = filteredDogs.Max(d => d.Age);
